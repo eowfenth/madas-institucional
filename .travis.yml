@@ -1,0 +1,20 @@
+language: node_js
+
+node_js:
+  - 'lts/*'
+
+cache:
+  yarn: true
+
+sudo: false
+
+stages:
+  - lint
+  - test
+
+jobs:
+  include:
+    - stage: lint
+      script: yarn lint
+    - stage: test
+script: yarn test:update
