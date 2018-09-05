@@ -5,7 +5,6 @@
     "scripts": {
         "coverage": "node node_modules/jest/bin/jest --verbose --coverage && open ./coverage/lcov-report/index.html",
         "devtools": "adb shell input keyevent 82",
-        "lint": "node node_modules/eslint/bin/eslint **/*.js",
         "release": "cd android && ./gradlew assembleRelease",
         "start": "node node_modules/react-native/local-cli/cli.js start",
         "start:android": "react-native run-android",
