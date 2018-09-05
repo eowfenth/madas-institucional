@@ -7,6 +7,47 @@ const labels = {
     location: "LOCALIZAÇÃO"
 }
 
+function formatDate(date) {
+    const monthNames = [
+        'Janeiro',
+        'Feveiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'Julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro'
+    ];
+
+    const weekDayNames = [
+        'Domingo',
+        'Segunda-feira',
+        'Terça-feira',
+        'Quarta-feira',
+        'Quinta-feira',
+        'Sexta-feira',
+        'Sábado',
+    ];
+
+    const dateObject = new Date(date);
+    let day = dateObject.getDate();
+    let month = dateObject.getMonth();
+    let hours = dateObject.getHours();
+    let minutes = dateObject.getMinutes();
+
+    if (day < 10)
+        day = '0' + day;
+    if (hours < 10)
+        hours = '0' + hours;
+    if (minutes < 10)
+        minutes = '0' + minutes;
+
+    return `${weekDayNames[dateObject.getDay()]}, ${day} de ${monthNames[month]} de ${dateObject.getFullYear()}, às ${hours}:${minutes}`
+}
 export default LocationBox = (props) => (
     <View style={styles.container}>
         <Text style={{ ...styles.genericLabel, fontSize: 16 }}>{labels.address}</Text>
