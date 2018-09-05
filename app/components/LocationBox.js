@@ -7,7 +7,7 @@ const labels = {
     location: "LOCALIZAÇÃO"
 }
 
-export const LocationBox = (props) => (
+export default LocationBox = (props) => (
     <View style={styles.container}>
         <Text style={{ ...styles.genericLabel, fontSize: 16 }}>{labels.address}</Text>
         <Text style={{ ...styles.genericLabel, fontSize: 14, marginLeft: 15, marginTop: 10 }}>{props.location}</Text>
@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
     container: {
         height: 140,
         justifyContent: "center",
+        marginTop: 10,
         paddingTop: 10,
         paddingBottom: 20,
         paddingRight: 10,
