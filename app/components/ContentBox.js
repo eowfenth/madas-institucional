@@ -8,27 +8,6 @@ const labels = {
   content: 'Conteúdo a ser discutido:',
 };
 
-export default (ContentBox = props => (
-  <View>
-    <Text style={styles.titleContentLabel}>{props.title}</Text>
-    <Text style={styles.subtitleContentLabel}>{props.subtitle}</Text>
-    <Text style={{ ...styles.genericLabel, ...styles.margin }}>
-      {props.speakers && props.speakers.length > 1
-        ? labels.speakers[0]
-        : labels.speakers[1]}
-    </Text>
-    {props.speakers.map((x, index) => (
-      <View key={index} style={styles.genericContainer}>
-        <Text>• {x}</Text>
-      </View>
-    ))}
-    <Text style={{ ...styles.genericLabel, ...styles.margin }}>
-      {labels.content}
-    </Text>
-    <Text style={styles.contentMargin}>{props.content}</Text>
-  </View>
-));
-
 const styles = StyleSheet.create({
   genericLabel: {
     fontSize: 16,
@@ -52,3 +31,29 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
 });
+
+const ContentBox = props => {
+  const { content, title, speakers, subtitle } = props;
+  return (
+    <View>
+      <Text style={styles.titleContentLabel}>{title}</Text>
+      <Text style={styles.subtitleContentLabel}>{subtitle}</Text>
+      <Text style={{ ...styles.genericLabel, ...styles.margin }}>
+        {speakers && speakers.length > 1
+          ? labels.speakers[0]
+          : labels.speakers[1]}
+      </Text>
+      {speakers.map(speaker => (
+        <View key={speaker.key} style={styles.genericContainer}>
+          <Text>{`• ${speaker.name}`}</Text>
+        </View>
+      ))}
+      <Text style={{ ...styles.genericLabel, ...styles.margin }}>
+        {labels.content}
+      </Text>
+      <Text style={styles.contentMargin}>{content}</Text>
+    </View>
+  );
+};
+
+export default ContentBox;

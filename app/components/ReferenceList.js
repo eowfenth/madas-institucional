@@ -5,21 +5,6 @@ const labels = {
   listName: 'Materiais de Discussão:',
 };
 
-export default (ReferenceList = props => (
-  <View>
-    <Text style={{ ...styles.genericLabel, fontSize: 16 }}>
-      {labels.listName}
-    </Text>
-    {props.references.map(x => (
-      <View key={x.key} style={styles.referenceItemContainer}>
-        <Text style={{}}>• {x.author}</Text>
-        <Text style={styles.referenceTitleLabel}>{x.title}</Text>
-        <Text>{x.from}</Text>
-      </View>
-    ))}
-  </View>
-));
-
 const styles = StyleSheet.create({
   listLabel: {},
   genericLabel: {
@@ -33,3 +18,23 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
 });
+
+const ReferenceList = props => {
+  const { references } = props;
+  return (
+    <View>
+      <Text style={{ ...styles.genericLabel, fontSize: 16 }}>
+        {labels.listName}
+      </Text>
+      {references.map(reference => (
+        <View key={reference.key} style={styles.referenceItemContainer}>
+          <Text>{`- ${reference.author}`}</Text>
+          <Text style={styles.referenceTitleLabel}>{reference.title}</Text>
+          <Text>{reference.from}</Text>
+        </View>
+      ))}
+    </View>
+  );
+};
+
+export default ReferenceList;
