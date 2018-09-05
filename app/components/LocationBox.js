@@ -3,7 +3,7 @@ import { Linking, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 const GOOGLE_MAPS_BASE_URL = "https://www.google.com/maps/place/";
 const labels = {
-    address: "Endereço:",
+    address: "Onde e quando: ",
     location: "LOCALIZAÇÃO"
 }
 
@@ -48,10 +48,12 @@ function formatDate(date) {
 
     return `${weekDayNames[dateObject.getDay()]}, ${day} de ${monthNames[month]} de ${dateObject.getFullYear()}, às ${hours}:${minutes}`
 }
+
 export default LocationBox = (props) => (
     <View style={styles.container}>
-        <Text style={{ ...styles.genericLabel, fontSize: 16 }}>{labels.address}</Text>
-        <Text style={{ ...styles.genericLabel, fontSize: 14, marginLeft: 15, marginTop: 10 }}>{props.location}</Text>
+        <Text style={{ ...styles.genericLabel, fontSize: 16, marginTop: 5 }}>{labels.address}</Text>
+        <Text style={{ ...styles.genericLabel, fontSize: 14, marginLeft: 15, marginTop: 5, fontStyle: "italic" }}>{formatDate(props.startAt)}</Text>
+        <Text style={{ ...styles.genericLabel, fontSize: 14, marginLeft: 15}}>{props.location}</Text>
         <Text style={{ ...styles.genericLabel, fontSize: 14, marginLeft: 15 }}>{props.complement}</Text>
         <TouchableOpacity
             style={styles.button}
@@ -68,7 +70,7 @@ export default LocationBox = (props) => (
 
 const styles = StyleSheet.create({
     container: {
-        height: 140,
+        height: 150,
         justifyContent: "center",
         marginTop: 10,
         paddingTop: 10,
