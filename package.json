@@ -3,11 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "coverage":
+    "node node_modules/jest/bin/jest --verbose --coverage && open ./coverage/lcov-report/index.html",
     "devtools": "adb shell input keyevent 82",
     "release": "cd android && ./gradlew assembleRelease",
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "start:android": "react-native run-android",
-    "test": "jest"
+    "test": "node node_modules/jest/bin/jest --verbose --coverage",
+    "test:update": "node node_modules/jest/bin/jest --verbose --coverage --updateSnapshot",
+    "test:watch": "node node_modules/jest/bin/jest --verbose --watch",
   },
   "dependencies": {
     "react": "16.4.1",
