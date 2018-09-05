@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
     listLabel: {
     },
     genericLabel: {
-        color: "#212121"
+        color: "#212121",
+        marginTop: 10
     },
     referenceTitleLabel: {
         marginTop: 5
