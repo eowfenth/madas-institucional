@@ -9,12 +9,12 @@ cache:
 sudo: false
 
 stages:
-  - lint
+  # - lint
   - test
 
 jobs:
   include:
-    - stage: lint
-      script: yarn lint
+    # - stage: lint
+      # script: yarn lint
     - stage: test
-script: yarn test:update
+      script: yarn test:update
