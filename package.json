@@ -1,31 +1,29 @@
 {
-    "name": "madas",
-    "version": "0.0.1",
-    "private": true,
-    "scripts": {
-        "coverage": "node node_modules/jest/bin/jest --verbose --coverage && open ./coverage/lcov-report/index.html",
-        "devtools": "adb shell input keyevent 82",
-        "release": "cd android && ./gradlew assembleRelease",
-        "start": "node node_modules/react-native/local-cli/cli.js start",
-        "start:android": "react-native run-android",
-        "test": "node node_modules/jest/bin/jest --verbose --coverage",
-        "test:update": "node node_modules/jest/bin/jest --verbose --coverage --updateSnapshot",
-        "test:watch": "node node_modules/jest/bin/jest --verbose --watch"
-    },
-    "dependencies": {
-        "react": "16.4.1",
-        "react-native": "0.56.0"
-    },
-    "devDependencies": {
-        "babel-jest": "23.4.2",
-        "babel-preset-react-native": "5.0.2",
-        "eslint-plugin-import": "^2.14.0",
-        "eslint-plugin-jsx-a11y": "^6.1.1",
-        "eslint-plugin-react": "^7.11.1",
-        "jest": "23.5.0",
-        "react-test-renderer": "16.4.1"
-    },
-    "jest": {
-        "preset": "react-native"
-    }
+  "name": "madas",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "coverage": "node node_modules/jest/bin/jest --verbose --coverage && open ./coverage/lcov-report/index.html",
+    "devtools": "adb shell input keyevent 82",
+    "release": "cd android && ./gradlew assembleRelease",
+    "start:android": "react-native run-android",
+    "test": "node node_modules/jest/bin/jest --verbose --coverage",
+    "test:update": "node node_modules/jest/bin/jest --verbose --coverage --updateSnapshot",
+    "test:watch": "node node_modules/jest/bin/jest --verbose --watch"
+  },
+  "dependencies": {
+    "react": "16.5.0",
+    "react-native": "0.57.0",
+    "react-navigation": "^2.14.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.45.1",
+    "react-test-renderer": "16.5.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
 }
