@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "808569346393",
+    "firebase_url": "https://madas-app.firebaseio.com",
+    "project_id": "madas-app",
+    "storage_bucket": "madas-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808569346393:android:36bc5c83e84cb05b",
+        "android_client_info": {
+          "package_name": "win.nickforthe.madas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808569346393-cv7no6fk145gi6f2p0p4g0knprolu4o5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNUxYotVQ5zZn3Y1NsyVMsT-3flmNbrsU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
